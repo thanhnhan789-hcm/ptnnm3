@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Product Dashboard</h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm theo tên..." class="search-input">
+            <span id="resultCount" class="result-count"></span>
+        </div>
+
+        <div class="pagination-controls">
+            <label for="itemsPerPage">Hiển thị:</label>
+            <select id="itemsPerPage" class="items-per-page">
+                <option value="5">5 sản phẩm</option>
+                <option value="10" selected>10 sản phẩm</option>
+                <option value="20">20 sản phẩm</option>
+            </select>
+        </div>
+
+        <div class="loading" id="loading">Đang tải dữ liệu...</div>
+        <div id="error" class="error"></div>
+        <table id="productTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Hình ảnh</th>
+                    <th class="sortable" data-sort="title">
+                        Tên sản phẩm
+                        <span class="sort-icon">⇅</span>
+                    </th>
+                    <th class="sortable" data-sort="price">
+                        Giá
+                        <span class="sort-icon">⇅</span>
+                    </th>
+                    <th>Mô tả</th>
+                    <th>Danh mục</th>
+                </tr>
+            </thead>
+            <tbody id="productBody">
+            </tbody>
+        </table>
+
+        <div class="pagination" id="pagination">
+            <button id="prevPage" class="pagination-btn">« Trước</button>
+            <div id="pageNumbers" class="page-numbers"></div>
+            <button id="nextPage" class="pagination-btn">Sau »</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
